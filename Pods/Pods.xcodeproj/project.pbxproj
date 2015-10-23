@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A815738181B0836AF99CBB7002A550F /* QREncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = C5390B6FF00806631F1DCD9141E68BC7 /* QREncoder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		85AB5FFD6CFA9940CA73D590E45F2824 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308EA1447F74F3E5B2B965FA9D69CC14 /* Foundation.framework */; };
+		9D29C1E284538C96F628B1ED6212B844 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F733984033434638086F340ABA465EA /* Pods-dummy.m */; };
+		A54EADDEBCEFA1285BB1E91A9F7CAC36 /* DataMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = F54EABF476CCEB2D851EC67494F4BFB5 /* DataMatrix.h */; };
+		B4027C1119B55C02AB9C7E909DE64633 /* QREncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 910F57AC853BB8876E1846B033F72CE6 /* QREncoder.h */; };
+		BEEC111C549D7BB758BA1A1D61EA8B32 /* QR_Encode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFFF252E33FF204F2CA287891DF090 /* QR_Encode.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA3C04D24CE751611B9C79F314BE5320 /* QR-Code-Encoder-for-Objective-C-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E424C880A30B3C84498F5D67DEF5CEDF /* QR-Code-Encoder-for-Objective-C-dummy.m */; };
+		D312740042AE0CAB45F8CB4982213EAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308EA1447F74F3E5B2B965FA9D69CC14 /* Foundation.framework */; };
+		EB55C688C9C22FF5D04D1BD2484FE1AF /* QR_Encode.h in Headers */ = {isa = PBXBuildFile; fileRef = C808F846729908B796FABDA775243687 /* QR_Encode.h */; };
+		FC0258902FFF0EB3FA972BDDFF6C6871 /* DataMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A116E307CCCFD95EE76BF3945C50F20 /* DataMatrix.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89C41AA8882AF4D917F312BF38465122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 024E83DFD99F4B2C03C55122C89BD9B6;
+			remoteInfo = "QR-Code-Encoder-for-Objective-C";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		037B0E0E2912606D44ACCF316626501D /* libQR-Code-Encoder-for-Objective-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libQR-Code-Encoder-for-Objective-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2A116E307CCCFD95EE76BF3945C50F20 /* DataMatrix.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = DataMatrix.mm; path = QRCodeEncoderObjectiveCAtGithub/DataMatrix.mm; sourceTree = "<group>"; };
+		308EA1447F74F3E5B2B965FA9D69CC14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3F733984033434638086F340ABA465EA /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		48C6A0C89C90DAAE73A1EC5903A92415 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		53F71DE3936079853289C04F7CCB0F71 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		5CFFFF252E33FF204F2CA287891DF090 /* QR_Encode.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = QR_Encode.cpp; path = QRCodeEncoderObjectiveCAtGithub/QR_Encode.cpp; sourceTree = "<group>"; };
+		641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		910F57AC853BB8876E1846B033F72CE6 /* QREncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QREncoder.h; path = QRCodeEncoderObjectiveCAtGithub/QREncoder.h; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		C5390B6FF00806631F1DCD9141E68BC7 /* QREncoder.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = QREncoder.mm; path = QRCodeEncoderObjectiveCAtGithub/QREncoder.mm; sourceTree = "<group>"; };
+		C7E953B50BE215BB45F0A2716CA4D91A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C808F846729908B796FABDA775243687 /* QR_Encode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QR_Encode.h; path = QRCodeEncoderObjectiveCAtGithub/QR_Encode.h; sourceTree = "<group>"; };
+		E424C880A30B3C84498F5D67DEF5CEDF /* QR-Code-Encoder-for-Objective-C-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QR-Code-Encoder-for-Objective-C-dummy.m"; sourceTree = "<group>"; };
+		EFFDFDF7EE864DAA12C446A484CB2747 /* QR-Code-Encoder-for-Objective-C-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QR-Code-Encoder-for-Objective-C-prefix.pch"; sourceTree = "<group>"; };
+		F54EABF476CCEB2D851EC67494F4BFB5 /* DataMatrix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DataMatrix.h; path = QRCodeEncoderObjectiveCAtGithub/DataMatrix.h; sourceTree = "<group>"; };
+		FB7EBCB3EE7E11654C4518E5CC412573 /* QR-Code-Encoder-for-Objective-C.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "QR-Code-Encoder-for-Objective-C.xcconfig"; sourceTree = "<group>"; };
+		FE3C01E96DBA647EF80AE395BA8DE717 /* QR-Code-Encoder-for-Objective-C-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "QR-Code-Encoder-for-Objective-C-Private.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		853EDC4417ABADD1153AD21C99693F99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D312740042AE0CAB45F8CB4982213EAF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF37E2A8AA7D726A7ED6C6C9617E9F08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85AB5FFD6CFA9940CA73D590E45F2824 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EFD0E3EC9006158CE6A32F94A45A59D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB7EBCB3EE7E11654C4518E5CC412573 /* QR-Code-Encoder-for-Objective-C.xcconfig */,
+				FE3C01E96DBA647EF80AE395BA8DE717 /* QR-Code-Encoder-for-Objective-C-Private.xcconfig */,
+				E424C880A30B3C84498F5D67DEF5CEDF /* QR-Code-Encoder-for-Objective-C-dummy.m */,
+				EFFDFDF7EE864DAA12C446A484CB2747 /* QR-Code-Encoder-for-Objective-C-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/QR-Code-Encoder-for-Objective-C";
+			sourceTree = "<group>";
+		};
+		41B22D6F94943E19A8483B4E48E737A6 /* QR-Code-Encoder-for-Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				F54EABF476CCEB2D851EC67494F4BFB5 /* DataMatrix.h */,
+				2A116E307CCCFD95EE76BF3945C50F20 /* DataMatrix.mm */,
+				910F57AC853BB8876E1846B033F72CE6 /* QREncoder.h */,
+				C5390B6FF00806631F1DCD9141E68BC7 /* QREncoder.mm */,
+				5CFFFF252E33FF204F2CA287891DF090 /* QR_Encode.cpp */,
+				C808F846729908B796FABDA775243687 /* QR_Encode.h */,
+				1EFD0E3EC9006158CE6A32F94A45A59D /* Support Files */,
+			);
+			path = "QR-Code-Encoder-for-Objective-C";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				308EA1447F74F3E5B2B965FA9D69CC14 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				7DC9412672745E9614B9EECE1EE35A68 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7DC9412672745E9614B9EECE1EE35A68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41B22D6F94943E19A8483B4E48E737A6 /* QR-Code-Encoder-for-Objective-C */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		952EEBFAF8F7E620423C9F156F25A506 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */,
+				BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */,
+				3F733984033434638086F340ABA465EA /* Pods-dummy.m */,
+				641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */,
+				48C6A0C89C90DAAE73A1EC5903A92415 /* Pods.debug.xcconfig */,
+				53F71DE3936079853289C04F7CCB0F71 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7E953B50BE215BB45F0A2716CA4D91A /* libPods.a */,
+				037B0E0E2912606D44ACCF316626501D /* libQR-Code-Encoder-for-Objective-C.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				952EEBFAF8F7E620423C9F156F25A506 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3E6B54B5618A79D384433E317A116A89 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A54EADDEBCEFA1285BB1E91A9F7CAC36 /* DataMatrix.h in Headers */,
+				B4027C1119B55C02AB9C7E909DE64633 /* QREncoder.h in Headers */,
+				EB55C688C9C22FF5D04D1BD2484FE1AF /* QR_Encode.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		024E83DFD99F4B2C03C55122C89BD9B6 /* QR-Code-Encoder-for-Objective-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 718667A72BE2745B894FD15A780BE1DF /* Build configuration list for PBXNativeTarget "QR-Code-Encoder-for-Objective-C" */;
+			buildPhases = (
+				1F0C7028045B5F0345593005DF6349C4 /* Sources */,
+				853EDC4417ABADD1153AD21C99693F99 /* Frameworks */,
+				3E6B54B5618A79D384433E317A116A89 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QR-Code-Encoder-for-Objective-C";
+			productName = "QR-Code-Encoder-for-Objective-C";
+			productReference = 037B0E0E2912606D44ACCF316626501D /* libQR-Code-Encoder-for-Objective-C.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		595B3B90A68A3050A25C2A1114587762 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F50B5AC59B5973C5DDEDEBD33BFA71D2 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				80C4090ECD8EE3551CD63C61C6E976E9 /* Sources */,
+				AF37E2A8AA7D726A7ED6C6C9617E9F08 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				571965F23EE970AE1E1FD8A9CA3CA90A /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = C7E953B50BE215BB45F0A2716CA4D91A /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				595B3B90A68A3050A25C2A1114587762 /* Pods */,
+				024E83DFD99F4B2C03C55122C89BD9B6 /* QR-Code-Encoder-for-Objective-C */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F0C7028045B5F0345593005DF6349C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC0258902FFF0EB3FA972BDDFF6C6871 /* DataMatrix.mm in Sources */,
+				CA3C04D24CE751611B9C79F314BE5320 /* QR-Code-Encoder-for-Objective-C-dummy.m in Sources */,
+				6A815738181B0836AF99CBB7002A550F /* QREncoder.mm in Sources */,
+				BEEC111C549D7BB758BA1A1D61EA8B32 /* QR_Encode.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C4090ECD8EE3551CD63C61C6E976E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D29C1E284538C96F628B1ED6212B844 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		571965F23EE970AE1E1FD8A9CA3CA90A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "QR-Code-Encoder-for-Objective-C";
+			target = 024E83DFD99F4B2C03C55122C89BD9B6 /* QR-Code-Encoder-for-Objective-C */;
+			targetProxy = 89C41AA8882AF4D917F312BF38465122 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DB6477A5BC35532FE1053530B7372DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53F71DE3936079853289C04F7CCB0F71 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5632A2C431A8F1C24EB29239201E6BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48C6A0C89C90DAAE73A1EC5903A92415 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		637B9399D0971491B355084304B6DC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3C01E96DBA647EF80AE395BA8DE717 /* QR-Code-Encoder-for-Objective-C-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QR-Code-Encoder-for-Objective-C/QR-Code-Encoder-for-Objective-C-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		782F97EA487A5886DB57819AAFC23636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3C01E96DBA647EF80AE395BA8DE717 /* QR-Code-Encoder-for-Objective-C-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QR-Code-Encoder-for-Objective-C/QR-Code-Encoder-for-Objective-C-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */,
+				74857149DC1E0D599B8A01A78349A926 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		718667A72BE2745B894FD15A780BE1DF /* Build configuration list for PBXNativeTarget "QR-Code-Encoder-for-Objective-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				637B9399D0971491B355084304B6DC88 /* Debug */,
+				782F97EA487A5886DB57819AAFC23636 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F50B5AC59B5973C5DDEDEBD33BFA71D2 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5632A2C431A8F1C24EB29239201E6BDB /* Debug */,
+				0DB6477A5BC35532FE1053530B7372DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
