@@ -1,1 +1,1 @@
-pod 'QR-Code-Encoder-for-Objective-C', '1.0'
+pod 'ZBarSDK', '~> 1.3'

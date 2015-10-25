@@ -9,13 +9,24 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>QR-Code-Encoder-for-Objective-C.xcscheme</key>
+		<key>ZBarSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>03DDAEEEEEB5ADA8A750F9DD9FF342EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>55561546406C125B40D3F3C35043B7E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
