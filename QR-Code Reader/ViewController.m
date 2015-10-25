@@ -8,11 +8,15 @@
 
 #import "ViewController.h"
 
-#import "ZBarSDK.h"
-
+// Apple
 #import <AVFoundation/AVCaptureDevice.h>
+#import <AudioToolbox/AudioToolbox.h>
 
-@interface ViewController()<ZBarReaderViewDelegate>
+// Pods
+#import "ZBarSDK.h"
+#import <ZXingObjC/ZXingObjC.h>
+
+@interface ViewController()<ZBarReaderViewDelegate, ZXCaptureDelegate>
 
 // UI
 @property(nonatomic,strong) UIView *viewCamera;
@@ -25,6 +29,15 @@
 
 @property(nonatomic,strong) NSString *qrcodeData;
 
+@property (nonatomic, strong) ZXCapture *capture;
+
+typedef enum {
+    TypeReaderingQRCode,
+    TypeReaderingDataMatrix
+} TypeReadering;
+
+@property(nonatomic) TypeReadering typeReadering;
+
 @end
 
 @implementation ViewController
@@ -32,7 +45,12 @@
 #pragma mark - View Lifecycle
 
 -(void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    // Here you can choose if use ZBar or ZXingObjC
+    self.typeReadering = TypeReaderingDataMatrix;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -48,10 +66,27 @@
 
     [super viewDidLayoutSubviews];
 
-    self.readerqr.frame = self.viewCamera.frame;
+    if ( self.typeReadering == TypeReaderingQRCode ) {
+    
+        self.readerqr.frame = self.viewCamera.frame;
+        
+        self.cameraImage.center = CGPointMake( self.readerqr.frame.size.width/2, (self.readerqr.frame.size.height/2));
+        
+    } else {
+        
+        self.capture.layer.frame = self.view.bounds;
+        
+        CGAffineTransform captureSizeTransform = CGAffineTransformMakeScale(320 / self.view.frame.size.width, 480 / self.view.frame.size.height);
+        self.capture.scanRect = CGRectApplyAffineTransform( self.view.frame, captureSizeTransform );
+        
+        self.cameraImage.center = CGPointMake( self.view.frame.size.width/2, (self.view.frame.size.height/2));
+        
+    }
 
-    self.cameraImage.center = CGPointMake( self.readerqr.frame.size.width/2, (self.readerqr.frame.size.height/2));
+}
 
+-(void)dealloc {
+    [self.capture.layer removeFromSuperlayer];
 }
 
 #pragma mark - IBAction methods
@@ -93,21 +128,31 @@
         
     } else {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Invalid QR Code. Try again."
-                                                                       message:nil
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self restartCamera];
-        }];
-
-        [alert addAction:ok];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        [self.readerqr stop];
+        [self showInvalidCode];
         
     }
+    
+}
+
+#pragma mark - ZXCaptureDelegate Methods
+
+-(void)captureResult:(ZXCapture *)capture result:(ZXResult *)result {
+    
+    if ( ! result )
+        return;
+    
+    // We got a result. Display information about the result onscreen.
+    NSString *formatString = [self barcodeFormatToString:result.barcodeFormat];
+    NSString *display = [NSString stringWithFormat:@"Scanned!\nFormat: %@\nContents: %@", formatString, result.text];
+    
+    self.qrcodeData = display;
+    
+    // Vibrate
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+    [self.capture stop];
+    
+    [self showResult];
     
 }
 
@@ -115,20 +160,41 @@
 
 -(void)showScanner {
     
-    self.readerqr = [ZBarReaderView new];
-    self.readerqr.readerDelegate = self;
-    self.readerqr.frame = self.viewCamera.frame;
-    [self.readerqr addConstraints: self.viewCamera.constraints];
-    [self.view addSubview:self.readerqr];
-    [self.readerqr addSubview:self.cameraImage];
-    [self.readerqr addSubview:self.btnLight];
-    self.readerqr.tag = 99999999;
-    self.readerqr.torchMode = AVCaptureTorchModeOff;
-    [self.readerqr start];
+    if ( self.typeReadering == TypeReaderingQRCode ) {
     
-    ZBarImageScanner *scanner = self.readerqr.scanner;
-    
-    [scanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
+        self.readerqr = [ZBarReaderView new];
+        self.readerqr.readerDelegate = self;
+        self.readerqr.frame = self.viewCamera.frame;
+        [self.readerqr addConstraints: self.viewCamera.constraints];
+        [self.view addSubview:self.readerqr];
+        [self.readerqr addSubview:self.cameraImage];
+        [self.readerqr addSubview:self.btnLight];
+        self.readerqr.tag = 99999999;
+        self.readerqr.torchMode = AVCaptureTorchModeOff;
+        [self.readerqr start];
+        
+        ZBarImageScanner *scanner = self.readerqr.scanner;
+        
+        [scanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
+        
+    } else {
+        
+        if ( ! self.capture ) {
+        
+            self.capture = [[ZXCapture alloc] init];
+            self.capture.camera = self.capture.back;
+            self.capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+            self.capture.rotation = 90.0f;
+            
+            self.capture.layer.frame = self.view.bounds;
+            [self.view.layer addSublayer:self.capture.layer];
+            [self.view.layer addSublayer:self.cameraImage.layer];
+            
+            self.capture.delegate = self;
+            
+        }
+        
+    }
     
 }
 
@@ -166,12 +232,95 @@
 
     self.qrcodeData = @"";
     [self.viewResult removeFromSuperview];
-
-    if ( ! [self.readerqr isDescendantOfView:self.view] )
-        [self.view addSubview:self.readerqr];
     
-    [self.readerqr start];
+    if ( self.typeReadering == TypeReaderingQRCode ) {
+        
+        if ( ! [self.readerqr isDescendantOfView:self.view] )
+            [self.view addSubview:self.readerqr];
+        
+        [self.readerqr start];
+        
+    } else {
+        
+        [self.capture start];
+        
+    }
 
+}
+
+-(NSString *)barcodeFormatToString:(ZXBarcodeFormat)format {
+ 
+    switch (format) {
+        case kBarcodeFormatAztec:
+            return @"Aztec";
+            
+        case kBarcodeFormatCodabar:
+            return @"CODABAR";
+            
+        case kBarcodeFormatCode39:
+            return @"Code 39";
+            
+        case kBarcodeFormatCode93:
+            return @"Code 93";
+            
+        case kBarcodeFormatCode128:
+            return @"Code 128";
+            
+        case kBarcodeFormatDataMatrix:
+            return @"Data Matrix";
+            
+        case kBarcodeFormatEan8:
+            return @"EAN-8";
+            
+        case kBarcodeFormatEan13:
+            return @"EAN-13";
+            
+        case kBarcodeFormatITF:
+            return @"ITF";
+            
+        case kBarcodeFormatPDF417:
+            return @"PDF417";
+            
+        case kBarcodeFormatQRCode:
+            return @"QR Code";
+            
+        case kBarcodeFormatRSS14:
+            return @"RSS 14";
+            
+        case kBarcodeFormatRSSExpanded:
+            return @"RSS Expanded";
+            
+        case kBarcodeFormatUPCA:
+            return @"UPCA";
+            
+        case kBarcodeFormatUPCE:
+            return @"UPCE";
+            
+        case kBarcodeFormatUPCEANExtension:
+            return @"UPC/EAN extension";
+            
+        default:
+            return @"Unknown";
+    }
+    
+}
+
+-(void)showInvalidCode {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Invalid QR Code. Try again."
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self restartCamera];
+    }];
+    
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    [self.readerqr stop];
+    
 }
 
 #pragma mark - Creating components
@@ -209,7 +358,7 @@
         _viewResult = [[UIView alloc] initWithFrame:self.view.frame];
         [_viewResult addSubview:self.lbResult];
         [_viewResult addSubview:self.btnRestartScan];
-        
+        _viewResult.backgroundColor = [UIColor whiteColor];
     }
     
     return _viewResult;
@@ -221,10 +370,11 @@
     if ( ! _lbResult ) {
         
         CGRect f = self.view.frame;
-        CGFloat height = 44;
+        CGFloat height = 89;
         
         _lbResult = [[UILabel alloc] initWithFrame:CGRectMake( 0, f.size.height/2 - height/2, f.size.width, height )];
         _lbResult.textAlignment = NSTextAlignmentCenter;
+        _lbResult.numberOfLines = 0;
         
     }
     
