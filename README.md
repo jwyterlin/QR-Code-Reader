@@ -2,5 +2,5 @@
 
 Libs:
 
-ZBarSDK - 1.3
-ZXingObjC - 3.0
+- ZBarSDK - 1.3
+- ZXingObjC - 3.0
