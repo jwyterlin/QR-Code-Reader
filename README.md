@@ -1,4 +1,4 @@
-# QR-Code-Reader
+# QR-Code-Reader - iOS Application
 
 Libs:
 
